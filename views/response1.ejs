@@ -24,17 +24,17 @@
 	</header>
 	<nav>
 		<button
-			<%= global.PCR ? 'disabled' : '' %>			 
+			<%= locals.session.PCR ? 'disabled' : '' %>			 
 			class="marginRight" 
 			onclick="window.location.href='\confirmation?order=PCR&highcon=<%= high_contrast%>'">
 			<%= t('actions.orderPCR') %></button>
 		<button
-			<%= global.RT ? 'disabled' : '' %>			 
+			<%= locals.session.RT ? 'disabled' : '' %>			 
 			class="marginRight" 
 			onclick="window.location.href='\confirmation?order=RT&highcon=<%= high_contrast%>'">
 			<%= t('actions.orderRT') %></button>
 		<button
-			<%= global.masks ? 'disabled' : '' %>			 
+			<%= locals.session.masks ? 'disabled' : '' %>			 
 			class="marginRight" 
 			onclick="window.location.href='\confirmation?order=masks&highcon=<%= high_contrast%>'">
 			<%= t('actions.orderClothFace') %></button>

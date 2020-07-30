@@ -17,9 +17,6 @@ const favicon = require('serve-favicon');
 
 
 //Global variables
-global.PCR = false;
-global.RT = false;
-global.masks = false;
 global.citeDate = getTomorrow();
 
 function getTomorrow() {
@@ -55,6 +52,8 @@ app.use(logger('dev'));
 //Favicon
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
 
+
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -67,6 +66,12 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
+app.use((req, res, next) => {
+    // To use req.session in the views
+    res.locals.session = req.session;
+    next();
+ });
 //sass
 app.use(
     sass({
