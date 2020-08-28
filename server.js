@@ -166,7 +166,8 @@ app.get('/', function(req, res){
                 { 
                     lng : req.lng, 
                     name: user.username, 
-                    email: user.email 
+                    email: user.email,
+                    high_contrast: false 
                 });
             }
             // OTHER ATTRIBUTES....
